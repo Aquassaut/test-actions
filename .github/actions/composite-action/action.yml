@@ -17,12 +17,9 @@ runs:
   using: "composite"
   steps:
     - name: print inputs
+      shell: bash
       run: |
         echo "env: ${{ inputs.env }}"
         echo "component_name: ${{ inputs.component_name }}"
         echo "component_property_name: ${{ inputs.component_property_name }}"
         echo "component_property_value: ${{ inputs.component_property_value }}"
-
-    - name: print vars
-      run: |
-        echo "component_property_value ${{ vars[component_property_name] }}"
