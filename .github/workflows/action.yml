@@ -1,0 +1,28 @@
+name: 'Composite action'
+description: 'Print stuff'
+inputs:
+  env:
+    description: 'current environment'
+    required: true
+  component_name:
+    description: 'current component'
+    required: true
+  component_property_name:
+    description: 'name of the GHA variable that holds the component proprty'
+    required: true
+  component_property_value:
+    description: 'value of component property'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: print inputs
+      run: |
+        echo "env: ${{ inputs.env }}"
+        echo "component_name: ${{ inputs.component_name }}"
+        echo "component_property_name: ${{ inputs.component_property_name }}"
+        echo "component_property_value: ${{ inputs.component_property_value }}"
+
+    - name: print vars
+      run: |
+        echo "component_property_value ${{ vars[component_property_name] }}"

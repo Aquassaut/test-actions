@@ -1,0 +1,27 @@
+name: Reusable workflow
+
+on:
+  workflow_call:
+    inputs:
+      env:
+        required: true
+        type: string
+
+jobs:
+  run-the-workflow:
+    strategy:
+      matrix:
+        component:
+        - name: component1
+          property: var1
+        - name: component2
+          property: var2
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.env }}
+    steps:
+    - uses: ./.github/workflows/action.yml
+      with:
+        env: ${{ input.env }}
+        component_name: ${{ matrix.component.name }}
+        component_property_name: ${{ matrix.component.property}}
+        component_property_value: ${{ vars[matrix.component.property] }}
