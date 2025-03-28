@@ -13,6 +13,8 @@ inputs:
   component_property_value:
     description: 'value of component property'
     required: true
+  secret_value:
+    required: true
 runs:
   using: "composite"
   steps:
@@ -23,3 +25,18 @@ runs:
         echo "component_name: ${{ inputs.component_name }}"
         echo "component_property_name: ${{ inputs.component_property_name }}"
         echo "component_property_value: ${{ inputs.component_property_value }}"
+        echo "secret value: ${{ inputs.secret_value }}"
+    - name: print inputs as env
+      env:
+        env: ${{ inputs.env }}
+        component_name: ${{ inputs.component_name }}
+        component_property_name: ${{ inputs.component_property_name }}
+        component_property_value: ${{ inputs.component_property_value }}
+        secret_value: ${{ inputs.secret_value }}
+      shell: bash
+      run: |
+        echo "env: $env"
+        echo "component_name: $component_name"
+        echo "component_property_name: $component_property_name"
+        echo "component_property_value: $component_property_value"
+

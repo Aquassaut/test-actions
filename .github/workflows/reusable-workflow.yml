@@ -26,3 +26,4 @@ jobs:
         component_name: ${{ matrix.component.name }}
         component_property_name: ${{ matrix.component.property}}
         component_property_value: ${{ vars[matrix.component.property] }}
+        secret_value: ${{ secrets.SUPERSECRETVALUE }}
