@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: "env1"
     outputs:
-      out_vh1: ${{ steps.gen_outputs.outputs.modified_var1 }}
-      out_vh2: ${{ steps.gen_outputs.outputs.modified_var2 }}
+      out_vh1: ${{ steps.gen_outputs.outputs.out_vh1 }}
+      out_vh2: ${{ steps.gen_outputs.outputs.out_vh2 }}
     steps:
       - id: gen_outputs
         name: Generate outputs
