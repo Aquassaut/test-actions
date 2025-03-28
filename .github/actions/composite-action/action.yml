@@ -25,7 +25,7 @@ runs:
         echo "component_name: ${{ inputs.component_name }}"
         echo "component_property_name: ${{ inputs.component_property_name }}"
         echo "component_property_value: ${{ inputs.component_property_value }}"
-        echo "secret value: ${{ inputs.secret_value }}"
+        echo "secret value: ${{ inputs.secret_value }}"|sed 'I/U'
     - name: print inputs as env
       env:
         env: ${{ inputs.env }}
@@ -38,5 +38,5 @@ runs:
         echo "env: $env"
         echo "component_name: $component_name"
         echo "component_property_name: $component_property_name"
-        echo "component_property_value: $component_property_value"
+        echo "component_property_value: $component_property_value"|sed 'I/U'
 
