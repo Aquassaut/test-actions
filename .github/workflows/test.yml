@@ -20,7 +20,7 @@ jobs:
       out_vh2: ${{ steps.gen_outputs.outputs.modified_var2 }}
     steps:
       - id: gen_outputs
-      - name: Generate outputs
+        name: Generate outputs
         run: |
           echo out_${{ matrix.variable_holder.name }}=${{ vars[matrix.variable_holder.variable]}} >> "$GITHUB_OUTPUTS"
   job2:
