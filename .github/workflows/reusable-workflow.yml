@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
+    - uses: actions/checkout@v1
     - uses: ./.github/workflows/action.yml
       with:
         env: ${{ inputs.environment }}
