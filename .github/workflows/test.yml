@@ -31,5 +31,5 @@ jobs:
       - name: Print variables from job1
         run: |
           echo "vh1 -> ${{ needs.job1.outputs.out_vh1 }}"
-          echo "vh2 -> ${{ needs.job1.outputs.out_vh1 }}"
+          echo "vh2 -> ${{ needs.job1.outputs.out_vh2 }}"
 
