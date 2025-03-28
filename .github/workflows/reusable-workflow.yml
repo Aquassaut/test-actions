@@ -20,7 +20,7 @@ jobs:
     environment: ${{ inputs.environment }}
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/workflows/action.yml
+    - uses: ./.github/actions/composite-action
       with:
         env: ${{ inputs.environment }}
         component_name: ${{ matrix.component.name }}
