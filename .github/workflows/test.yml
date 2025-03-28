@@ -9,6 +9,6 @@ jobs:
     strategy:
       matrix:
         environment: [env1, env2]
-    uses: ./.github/workflows/workflow.yml
+    uses: ./.github/workflows/reusable-workflow.yml
     with:
       environment: ${{ matrix.environment }}
